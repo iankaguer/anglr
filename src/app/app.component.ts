@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TaskComponent} from './model/task/task.component' ;
+import {TaskItem} from "./model/task/task";
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,5 @@ import {TaskComponent} from './model/task/task.component' ;
 })
 export class AppComponent {
   title = 'anglr';
-  task: TaskComponent[] = [];
+  tasks: TaskItem[] = [];
 }
