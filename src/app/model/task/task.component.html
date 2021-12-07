@@ -1,4 +1,4 @@
-<div class="row" style="flex-direction: column; width: 80vw;">
+<div class="row" style="flex-direction: column; width: 100%;">
   <h2>My tasks</h2>
 
   <div class="for-form">
@@ -15,7 +15,7 @@
       <ul class="tasks">
         <li *ngFor="let task of tasks | taskFilter:filterargs">
 
-          <span><input type="checkbox" [checked]="task.executed" (click)="isExecuted(task)"> {{task.title}}</span>
+          <span><input type="checkbox" [checked]="task.executed" (click)="isExecuted(task)"> <span>{{task.title}}</span></span>
 
           <button class="delete" title="delete task"
                   (click)="deleteTask(task)">x</button>
@@ -29,6 +29,7 @@
           <span> {{task.title}}</span>
 
           <span style="font-size: 0.7em">Supprimé : {{task.deleted}}</span>
+          <span class="badge" (click)="removeTask(task)">x</span>
         </li>
       </ul>
     </div>

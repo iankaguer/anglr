@@ -83,4 +83,17 @@ export class TaskserviceService {
     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     return  date+' '+time;
   }
+
+  removeTask(task: TaskItem) {
+    let taskData = JSON.parse(this.tasklist || "");
+
+    for (let i=0; i<taskData.length; i++){
+      if (taskData[i].id == task.id){
+        taskData.splice(i, 1);
+        break;
+      }
+    }
+    this.tasklist = JSON.stringify(taskData)
+    window.localStorage.setItem("taskList", this.tasklist)
+  }
 }

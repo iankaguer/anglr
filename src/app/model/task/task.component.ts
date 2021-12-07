@@ -28,7 +28,7 @@ export class TaskComponent implements OnInit {
   }
 
   getTasks(): void {
-    this.tasks =this.taskservice.getTasks();
+    this.tasks =this.taskservice.getTasks().reverse();
   }
 
   addTask(title: string): void {
@@ -45,6 +45,11 @@ export class TaskComponent implements OnInit {
 
   deleteTask(task: TaskItem){
     this.taskservice.setDeleted(task)
+    this.getTasks();
+  }
+
+  removeTask(task: TaskItem){
+    this.taskservice.removeTask(task)
     this.getTasks();
   }
 }
