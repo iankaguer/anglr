@@ -64,10 +64,11 @@ export class TaskserviceService {
   setDeleted(task: TaskItem) {
     let taskData = JSON.parse(this.tasklist || "");
     for (let i=0; i<taskData.length; i++){
-
       if (taskData[i].id == task.id){
         taskData[i].executed = true;
         taskData[i].deleted = this.getCurrentDate();
+        console.log(taskData[i])
+        break;
       }
     }
 
