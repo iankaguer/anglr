@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TaskComponent} from './model/task/task.component' ;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'anglr';
+  task: TaskComponent[] = [];
 }

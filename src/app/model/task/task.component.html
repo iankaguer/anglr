@@ -1,0 +1,21 @@
+<h2>My tasks</h2>
+
+<div>
+  <label for="new-task">task Title: </label>
+  <input id="new-task" #taskTitle />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button class="add-button" (click)="addTask(taskTitle.value); taskTitle.value=''">
+    Add task
+  </button>
+</div>
+
+<ul class="tasks">
+  <li *ngFor="let task of tasks">
+
+    <span class="badge">{{task.id}}</span> {{task.title}}
+
+    <button class="delete" title="delete task"
+            (click)="isExecuted(task)">x</button>
+  </li>
+</ul>
