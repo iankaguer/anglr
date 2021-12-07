@@ -27,6 +27,7 @@ export class TaskserviceService {
     task.id = this.generateID();
     task.title = title
     task.executed = false;
+    task.deleted = ""
     taskData.push(task)
 
     this.tasklist = JSON.stringify(taskData)
@@ -52,13 +53,33 @@ export class TaskserviceService {
       for (let i=0; i<taskData.length; i++){
 
         if (taskData[i].id == id){
-          taskData[i].executed = true;
+          taskData[i].executed = !taskData[i].executed;
         }
       }
       this.tasklist = JSON.stringify(taskData)
-      console.log("taskdata", taskData)
-      console.log("tasklist", this.tasklist )
       window.localStorage.setItem("taskList", this.tasklist)
     }
+  }
+
+  setDeleted(task: TaskItem) {
+    let taskData = JSON.parse(this.tasklist || "");
+    for (let i=0; i<taskData.length; i++){
+
+      if (taskData[i].id == task.id){
+        taskData[i].executed = true;
+        taskData[i].deleted = this.getCurrentDate();
+      }
+    }
+
+    this.tasklist = JSON.stringify(taskData)
+    window.localStorage.setItem("taskList", this.tasklist)
+
+  }
+
+  getCurrentDate(){
+    let today = new Date();
+    let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    return  date+' '+time;
   }
 }

@@ -11,6 +11,7 @@ import {CommonModule} from "@angular/common";
 export class TaskComponent implements OnInit {
   tasks: TaskItem[]= []
 
+  filterargs = "" ;
 
   constructor( private taskservice: TaskserviceService) {
 
@@ -39,6 +40,11 @@ export class TaskComponent implements OnInit {
 
   isExecuted(task: TaskItem) {
     this.taskservice.setAsExecuted(task.id)
+    this.getTasks();
+  }
+
+  deleteTask(task: TaskItem){
+    this.taskservice.setDeleted(task)
     this.getTasks();
   }
 }

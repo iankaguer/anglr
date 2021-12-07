@@ -13,12 +13,22 @@
   <div class="row">
     <div class="col-6">
       <ul class="tasks">
-        <li *ngFor="let task of tasks">
+        <li *ngFor="let task of tasks | taskFilter:filterargs">
 
-          <span><span class="badge">{{task.executed?"✓":"✘"}}</span> {{task.title}}</span>
+          <span><input type="checkbox" [checked]="task.executed" (click)="isExecuted(task)"> {{task.title}}</span>
 
           <button class="delete" title="delete task"
-                  (click)="isExecuted(task)">x</button>
+                  (click)="deleteTask(task)">x</button>
+        </li>
+      </ul>
+    </div>
+    <div class="col-6">
+      <ul class="tasks-del">
+        <li *ngFor="let task of tasks | taskFilterDel:filterargs">
+
+          <span> {{task.title}}</span>
+
+          <span style="font-size: 0.7em">Supprimé : {{task.deleted}}</span>
         </li>
       </ul>
     </div>

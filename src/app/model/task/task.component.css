@@ -28,6 +28,7 @@
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
+
 }
 .for-form{
   display: flex;
@@ -43,12 +44,31 @@
 }
 
 .tasks li{
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(208, 234, 253, 0.75);
   padding: 0.4em;
   width: 100%;
   display: flex;
+  align-items: flex-start;
   border-radius: 4px;
  justify-content: space-between;
+  margin: 0.8em;
+  box-shadow: 0 1px 3px #7a7979;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tasks-del li{
+  background-color: rgba(255, 218, 218, 0.75);
+  padding: 0.4em;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 4px;
+  justify-content: space-between;
   margin: 0.8em;
   box-shadow: 0 1px 3px #7a7979;
   -webkit-transition: all 0.5s ease;
@@ -60,5 +80,18 @@
 .tasks li button{
   background-color: #fff;
   border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+  height: 2em;
+  margin: 0.2em;
+  width: 2em;
+}
+
+input[type=checkbox]{
+  font-size: 1.2em;
+  background: rgb(255,255,255); /* this is needed for iOS. Otherwise the background just becomes black. */
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 1em;
+  width: 1em;
   border-radius: 4px;
 }
