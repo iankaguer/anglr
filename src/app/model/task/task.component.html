@@ -1,21 +1,27 @@
-<h2>My tasks</h2>
+<div class="row" style="flex-direction: column; width: 80vw;">
+  <h2>My tasks</h2>
 
-<div>
-  <label for="new-task">task Title: </label>
-  <input id="new-task" #taskTitle />
+  <div class="for-form">
+    <input id="new-task" #taskTitle />
 
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button class="add-button" (click)="addTask(taskTitle.value); taskTitle.value=''">
-    Add task
-  </button>
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button class="add-button" (click)="addTask(taskTitle.value); taskTitle.value=''">
+      Add task
+    </button>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <ul class="tasks">
+        <li *ngFor="let task of tasks">
+
+          <span><span class="badge">{{task.executed?"✓":"✘"}}</span> {{task.title}}</span>
+
+          <button class="delete" title="delete task"
+                  (click)="isExecuted(task)">x</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 </div>
-
-<ul class="tasks">
-  <li *ngFor="let task of tasks">
-
-    <span class="badge">{{task.id}}</span> {{task.title}}
-
-    <button class="delete" title="delete task"
-            (click)="isExecuted(task)">x</button>
-  </li>
-</ul>

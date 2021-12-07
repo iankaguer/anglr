@@ -1,0 +1,64 @@
+.row{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.col-6{
+  width: 50%;
+  display: flex;
+}
+.col-4{
+  display: flex;
+  width: 33%;
+}
+.tasks{
+  list-style-type: none;
+}
+#new-task{
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  padding: 0.6em;
+  display: flex;
+  border-radius: 4px;
+  justify-content: space-between;
+  margin: 0.8em;
+  border: 1px solid #ccc;
+}
+.add-button{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.for-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+
+.badge{
+  color: #07315a;
+}
+
+.tasks li{
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 0.4em;
+  width: 100%;
+  display: flex;
+  border-radius: 4px;
+ justify-content: space-between;
+  margin: 0.8em;
+  box-shadow: 0 1px 3px #7a7979;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tasks li button{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

@@ -31,12 +31,14 @@ export class TaskComponent implements OnInit {
   }
 
   addTask(title: string): void {
-
-    this.taskservice.addToList( title)
-    //.subscribe(heroes => this.heroes = heroes);
+    if (title.trim() !== ""){
+      this.taskservice.addToList( title)
+      this.getTasks();
+    }
   }
 
   isExecuted(task: TaskItem) {
     this.taskservice.setAsExecuted(task.id)
+    this.getTasks();
   }
 }
