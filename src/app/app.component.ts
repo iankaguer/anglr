@@ -14,6 +14,5 @@ export class AppComponent {
 
   getThisContact(id: number) {
     this.selected = id;
-    console.log(id)
   }
 }

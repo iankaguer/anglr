@@ -7,7 +7,7 @@ import { TaskComponent } from './model/task/task.component';
 import { TaskFilterPipe } from './pipe/task-filter.pipe';
 import { TaskFilterDelPipe } from './pipe/task-filter-del.pipe';
 import { FormulaireComponent } from './model/formulaire/formulaire.component';
-import { AfficheurComponent } from './afficheur/afficheur.component';
+import { AfficheurComponent } from './model/afficheur/afficheur.component';
 import {FormBuilder, FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({

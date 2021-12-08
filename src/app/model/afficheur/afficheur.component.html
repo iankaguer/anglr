@@ -1,0 +1,19 @@
+<div class="row">
+  <div *ngIf="contactDetail">
+    <div>
+      <form (ngSubmit)="onFormSubmit()"  [formGroup]="contactForm">
+        <input type="hidden" value="{{contactDetail.id}}" name="id">
+
+        <div class="row">
+          <input type="text"  formControlName="nom" [(ngModel)]="contactDetail.nom">
+        </div>
+        <button type="submit" >Submit</button>
+      </form>
+
+    </div>
+    <div>{{contactDetail.email}}</div>
+    <div>{{contactDetail.pseudo}}</div>
+    <input type="text" value="sdsd" name="nom">
+  </div>
+
+</div>

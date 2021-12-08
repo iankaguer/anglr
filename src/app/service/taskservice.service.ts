@@ -67,7 +67,7 @@ export class TaskserviceService {
       if (taskData[i].id == task.id){
         taskData[i].executed = true;
         taskData[i].deleted = this.getCurrentDate();
-        console.log(taskData[i])
+
         break;
       }
     }
