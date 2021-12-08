@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {FormulaireserviceService} from "../../service/formulaireservice.service";
 import {Personne} from "./personne";
@@ -10,6 +10,7 @@ import {Personne} from "./personne";
 })
 export class FormulaireComponent implements OnInit {
   @Output() contactEvent = new EventEmitter<number>();
+  @Input() dataHasChanged = false;
   contactForm = new FormGroup({
     nom: new FormControl('',[ Validators.required, Validators.minLength(4)]),
     mail: new FormControl('', [Validators.required, Validators.email]),
@@ -44,6 +45,13 @@ export class FormulaireComponent implements OnInit {
     this.getContacts()
     // display form values on success
     //alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.contactForm.value, null, 4));
+  }
+
+  ngOnChanges() {
+
+    this.getContacts()
+
+    //console.log(JSON.stringify(this.getContacts()))
   }
 
   onReset(){

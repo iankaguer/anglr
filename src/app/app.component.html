@@ -305,10 +305,10 @@
 <div class="content" role="main" style="flex-direction: row">
 
   <div class="col-6">
-    <app-formulaire style="width: 100%"   (contactEvent)="getThisContact($event)"></app-formulaire>
+    <app-formulaire style="width: 100%"   (contactEvent)="getThisContact($event)"  [dataHasChanged]="notifyDataHasChanged"></app-formulaire>
   </div>
   <div class="col-6">
-    <app-afficheur  [selectedContact]="selected"></app-afficheur>
+    <app-afficheur  [selectedContact]="selected" (stateChanged)="getThisState($event)"></app-afficheur>
   </div>
 
 

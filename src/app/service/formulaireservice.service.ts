@@ -18,6 +18,7 @@ export class FormulaireserviceService {
   }
 
   getContacts(){
+    this.contacts = window.localStorage.getItem("contact");
     return JSON.parse(<string>this.contacts);
   }
 
@@ -39,6 +40,20 @@ export class FormulaireserviceService {
 
   }
 
+  editContact(s: string) {
+    let jsonData = JSON.parse(s);
+    let arrayData = JSON.parse(this.contacts|| "");
+    for (let i=0; i<arrayData.length; i++){
+      if (arrayData[i].id == jsonData.id){
+        arrayData[i].nom = jsonData.nom
+        this.contacts = JSON.stringify(arrayData)
+        window.localStorage.setItem("contact", this.contacts)
+        break
+      }
+    }
+
+  }
+
   // @ts-ignore
   getSelectedContact(id: number) {
     let taskData = JSON.parse(this.contacts || "");
@@ -57,5 +72,6 @@ export class FormulaireserviceService {
       return 1;
     }
   }
+
 
 }

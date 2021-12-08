@@ -1,19 +1,17 @@
 <div class="row">
   <div *ngIf="contactDetail">
     <div>
-      <form (ngSubmit)="onFormSubmit()"  [formGroup]="contactForm">
-        <input type="hidden" value="{{contactDetail.id}}" name="id">
+      <form   [formGroup]="contactForm">
+        <input type="hidden"  formControlName="id" [(ngModel)]="contactDetail.id">
 
         <div class="row">
-          <input type="text"  formControlName="nom" [(ngModel)]="contactDetail.nom">
+          <input type="text"  formControlName="nom" [(ngModel)]="contactDetail.nom" (change)="onFormSubmit()">
         </div>
-        <button type="submit" >Submit</button>
       </form>
 
     </div>
     <div>{{contactDetail.email}}</div>
     <div>{{contactDetail.pseudo}}</div>
-    <input type="text" value="sdsd" name="nom">
   </div>
 
 </div>

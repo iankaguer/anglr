@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, OnChanges} from '@angular/core';
 import {FormulaireserviceService} from "../../service/formulaireservice.service";
 import {Personne} from "../formulaire/personne";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
@@ -10,6 +10,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class AfficheurComponent implements OnInit {
   @Input() selectedContact = 0;
+  @Output() stateChanged = new EventEmitter<boolean>();
   contactDetail!: Personne;
   contactForm = new FormGroup({
     nom: new FormControl('',[ Validators.required, Validators.minLength(4)]),
@@ -18,12 +19,14 @@ export class AfficheurComponent implements OnInit {
   constructor(private formService: FormulaireserviceService) { }
 
   ngOnInit(): void {
+    this.stateChanged.emit(false);
   }
 
   ngOnChanges() {
     if (this.selectedContact !== undefined && this.selectedContact !== 0){
       this.getThisContactInfo(this.selectedContact)
     }
+
   }
 
   private getThisContactInfo(selectedId: number) {
@@ -44,7 +47,9 @@ export class AfficheurComponent implements OnInit {
    /* if (this.contactForm.invalid) {
       return;
     }*/
-
-    console.log(this.contactForm.value)
+    this.formService.editContact( JSON.stringify(this.contactForm.value));
+    this.stateChanged.emit(true);
+   // console.log(this.contactForm.value)
   }
+
 }

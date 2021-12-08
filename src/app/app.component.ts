@@ -10,9 +10,20 @@ export class AppComponent {
   title = 'anglr';
   tasks: TaskItem[] = [];
   selected!: number;
+  state = false;
+  notifyDataHasChanged= false;
 
 
   getThisContact(id: number) {
     this.selected = id;
   }
+
+  getThisState(event: boolean) {
+    //console.log()
+    this.state = event;
+    this.notifyDataHasChanged = event;
+  }
+
+
+
 }
