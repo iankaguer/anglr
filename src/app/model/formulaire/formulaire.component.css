@@ -1,0 +1,140 @@
+.row{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.col-6{
+  width: 50%;
+  display: flex;
+}
+
+.col-4{
+  display: flex;
+  width: 33%;
+}
+label{
+  padding: 0.5em ;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+label>input{
+  padding: 0.4em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  color: #262626;
+}
+#new-task{
+  background-color: rgba(255, 255, 255, 0.75);
+  width: 100%;
+  padding: 0.6em;
+  display: flex;
+  border-radius: 4px;
+  justify-content: space-between;
+  margin: 0.8em;
+  border: 1px solid #ccc;
+}
+button{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: .7em;
+  text-transform: uppercase;
+
+}
+.for-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+}
+
+
+.badge{
+  color: #fff;
+  margin: 0.2em;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+  width: 20px;
+  cursor: pointer;
+  background-color: #ff2440;
+}
+.list-contact{
+  width: 70%;
+  margin: 0;
+  padding: 0;
+}
+.list-contact li{
+  background-color: rgba(255, 255, 255, 0.82);
+  padding: 0.4em;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 4px;
+  justify-content: space-between;
+  margin: 0.8em 0;
+  box-shadow: 0 1px 3px #7a7979;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tasks-del li{
+  background-color: rgba(255, 218, 218, 0.75);
+  padding: 0.4em;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 4px;
+  justify-content: space-between;
+  margin: 0.8em;
+  box-shadow: 0 1px 3px #7a7979;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tasks li button{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+  height: 2em;
+  margin: 0.2em;
+  width: 2em;
+}
+
+input[type=checkbox]{
+  font-size: 1.2em;
+  background: rgb(255,255,255); /* this is needed for iOS. Otherwise the background just becomes black. */
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 1em;
+  width: 1em;
+  border-radius: 4px;
+}
+
+
+input[type=text]{
+  font-size: 1.2em;
+  background: rgb(255,255,255); /* this is needed for iOS. Otherwise the background just becomes black. */
+  border: 1px solid rgba(0,0,0,0.3);
+  width: 100%;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-6{
+    width: 100%;
+  }
+  .row{
+    flex-direction: column;
+  }
+}

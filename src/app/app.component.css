@@ -3,3 +3,16 @@
   padding: 5rem 2rem;
   flex-direction: column;
 }
+.row{
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+.col-6{
+  width: 50%;
+  display: flex;
+}
+.col-4{
+  display: flex;
+  width: 33%;
+}

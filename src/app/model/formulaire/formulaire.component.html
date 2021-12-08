@@ -1,0 +1,27 @@
+<div class="row" style="flex-direction: column; width: 100%">
+  <div class="row" style="max-height: 50vh; overflow-y: auto;">
+    <ul class="list-contact">
+      <li *ngFor="let contact of contacts" (click)="getThisContact(contact.id)">
+        <span>{{contact.nom}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="row" style="max-height: 50vh; overflow-y: auto">
+    <div></div>
+    <form (ngSubmit)="onFormSubmit()"  [formGroup]="contactForm" style="width: 70%">
+      <div class="row">
+        <label for="nom">Nom
+        <input type="text" formControlName='nom' id="nom"></label>
+      </div>
+      <div class="row" >
+        <label for="pseudo">Pseudo
+          <input type="text" formControlName="pseudo" id="pseudo"></label>
+      </div>
+      <div class="row" >
+        <label for="mail">Email
+        <input type="text" formControlName="mail" id="mail"></label>
+      </div>
+      <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+    </form>
+  </div>
+</div>

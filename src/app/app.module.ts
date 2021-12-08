@@ -6,16 +6,23 @@ import { AppComponent } from './app.component';
 import { TaskComponent } from './model/task/task.component';
 import { TaskFilterPipe } from './pipe/task-filter.pipe';
 import { TaskFilterDelPipe } from './pipe/task-filter-del.pipe';
+import { FormulaireComponent } from './model/formulaire/formulaire.component';
+import { AfficheurComponent } from './afficheur/afficheur.component';
+import {FormBuilder, FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskComponent,
     TaskFilterPipe,
-    TaskFilterDelPipe
+    TaskFilterDelPipe,
+    FormulaireComponent,
+    AfficheurComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

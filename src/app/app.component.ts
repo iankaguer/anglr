@@ -9,4 +9,11 @@ import {TaskItem} from "./model/task/task";
 export class AppComponent {
   title = 'anglr';
   tasks: TaskItem[] = [];
+  selected!: number;
+
+
+  getThisContact(id: number) {
+    this.selected = id;
+    console.log(id)
+  }
 }

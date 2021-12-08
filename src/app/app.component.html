@@ -302,9 +302,14 @@
 
 </div>
 
-<div class="content" role="main">
+<div class="content" role="main" style="flex-direction: row">
 
-<app-task></app-task>
+  <div class="col-6">
+    <app-formulaire style="width: 100%"   (contactEvent)="getThisContact($event)"></app-formulaire>
+  </div>
+  <div class="col-6">
+    <app-afficheur></app-afficheur>
+  </div>
 
 
 
@@ -315,9 +320,7 @@
 
 
   <!-- Links -->
-  <div class="card-container">
 
-  </div>
 
   <!-- Footer -->
   <footer>
